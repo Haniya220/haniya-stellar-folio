@@ -108,12 +108,12 @@ export function Hero() {
           <div className="relative animate-float">
             <div className="absolute -inset-6 rounded-full bg-[conic-gradient(from_0deg,theme(colors.violet.500),theme(colors.cyan.400),theme(colors.fuchsia.500),theme(colors.violet.500))] blur-2xl opacity-60 animate-glow-rotate" />
             <div className="absolute -inset-2 rounded-full bg-[conic-gradient(from_0deg,#a78bfa,#22d3ee,#a78bfa)] animate-glow-rotate" />
-            <div className="relative h-72 w-72 md:h-96 md:w-96 rounded-full p-1 bg-background">
+            <div className="relative h-80 w-80 md:h-[28rem] md:w-[28rem] rounded-full p-1 bg-background">
               <div className="h-full w-full rounded-full overflow-hidden ring-1 ring-white/10 shadow-2xl">
                 <img
                   src={haniya}
                   alt="Haniya — BCA student and aspiring software developer"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-top scale-110"
                 />
               </div>
             </div>
