@@ -127,9 +127,23 @@
   .bg-hero { background-image: var(--gradient-hero); }
   .bg-grid {
     background-image:
-      linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+      linear-gradient(oklch(1 0 0 / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.05) 1px, transparent 1px);
     background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  }
+  .bg-tech {
+    background-color: oklch(0.16 0.04 275);
+    background-image:
+      radial-gradient(circle at 20% 10%, oklch(0.45 0.20 280 / 0.25), transparent 45%),
+      radial-gradient(circle at 85% 90%, oklch(0.75 0.12 350 / 0.18), transparent 50%),
+      linear-gradient(oklch(1 0 0 / 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.035) 1px, transparent 1px);
+    background-size: auto, auto, 48px 48px, 48px 48px;
+  }
+  .bg-dots {
+    background-image: radial-gradient(oklch(1 0 0 / 0.08) 1px, transparent 1px);
+    background-size: 22px 22px;
   }
 }
 
