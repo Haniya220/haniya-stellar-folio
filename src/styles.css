@@ -38,7 +38,7 @@
 :root {
   --radius: 0.75rem;
   /* Dark navy + purple + cyan palette */
-  --background: oklch(0.16 0.04 270);
+  --background: oklch(0.18 0.035 250);
   --foreground: oklch(0.98 0.01 250);
   --navy: oklch(0.22 0.07 270);
   --purple: oklch(0.62 0.22 295);
@@ -133,17 +133,28 @@
     mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
   }
   .bg-tech {
-    background-color: oklch(0.16 0.04 275);
+    position: relative;
+    background-color: oklch(0.17 0.04 250);
     background-image:
-      radial-gradient(circle at 20% 10%, oklch(0.45 0.20 280 / 0.25), transparent 45%),
-      radial-gradient(circle at 85% 90%, oklch(0.75 0.12 350 / 0.18), transparent 50%),
-      linear-gradient(oklch(1 0 0 / 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(1 0 0 / 0.035) 1px, transparent 1px);
-    background-size: auto, auto, 48px 48px, 48px 48px;
+      radial-gradient(ellipse 60% 50% at 15% 0%, oklch(0.40 0.18 270 / 0.45), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 100%, oklch(0.55 0.14 340 / 0.30), transparent 60%),
+      radial-gradient(ellipse 70% 60% at 50% 50%, oklch(0.30 0.14 240 / 0.35), transparent 70%);
   }
-  .bg-dots {
-    background-image: radial-gradient(oklch(1 0 0 / 0.08) 1px, transparent 1px);
-    background-size: 22px 22px;
+  .tech-grid {
+    background-image:
+      linear-gradient(oklch(0.78 0.10 280 / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.78 0.10 280 / 0.07) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 40%, transparent 90%);
+    animation: grid-pan 18s linear infinite;
+  }
+  .tech-scan::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 0%, oklch(0.75 0.15 280 / 0.10) 50%, transparent 100%);
+    height: 30%;
+    animation: scan 7s ease-in-out infinite;
+    pointer-events: none;
   }
 }
 
@@ -159,5 +170,32 @@
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
 }
+@keyframes grid-pan {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 44px 44px, 44px 44px; }
+}
+@keyframes scan {
+  0% { transform: translateY(-40%); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(140%); opacity: 0; }
+}
+@keyframes drift-up {
+  0% { transform: translateY(20px); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(var(--r,140px)) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(var(--r,140px)) rotate(-360deg); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
 .animate-float { animation: float 6s ease-in-out infinite; }
 .animate-glow-rotate { animation: glow-rotate 8s linear infinite; }
+.animate-drift-up { animation: drift-up linear infinite; }
+.animate-orbit { animation: orbit linear infinite; }
+.animate-pulse-ring { animation: pulse-ring 2.4s cubic-bezier(0.2,0,0.2,1) infinite; }
