@@ -38,7 +38,7 @@
 :root {
   --radius: 0.75rem;
   /* Dark navy + purple + cyan palette */
-  --background: oklch(0.16 0.04 270);
+  --background: oklch(0.18 0.035 250);
   --foreground: oklch(0.98 0.01 250);
   --navy: oklch(0.22 0.07 270);
   --purple: oklch(0.62 0.22 295);
