@@ -106,8 +106,8 @@ export function Hero() {
           className="order-1 md:order-2 flex justify-center"
         >
           <div className="relative animate-float">
-            <div className="absolute -inset-6 rounded-full bg-[conic-gradient(from_0deg,theme(colors.violet.500),theme(colors.cyan.400),theme(colors.fuchsia.500),theme(colors.violet.500))] blur-2xl opacity-60 animate-glow-rotate" />
-            <div className="absolute -inset-2 rounded-full bg-[conic-gradient(from_0deg,#a78bfa,#22d3ee,#a78bfa)] animate-glow-rotate" />
+            <div className="absolute -inset-6 rounded-full bg-[conic-gradient(from_0deg,#8b5cf6,#6366f1,#f9a8d4,#a78bfa,#8b5cf6)] blur-2xl opacity-60 animate-glow-rotate" />
+            <div className="absolute -inset-2 rounded-full bg-[conic-gradient(from_0deg,#a78bfa,#818cf8,#fbcfe8,#a78bfa)] animate-glow-rotate" />
             <div className="relative h-80 w-80 md:h-[28rem] md:w-[28rem] rounded-full p-1 bg-background">
               <div className="h-full w-full rounded-full overflow-hidden ring-1 ring-white/10 shadow-2xl">
                 <img
